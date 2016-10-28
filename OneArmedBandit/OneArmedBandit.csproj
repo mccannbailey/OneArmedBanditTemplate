@@ -82,13 +82,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\7_100x125.jpg" />
+    <None Include="Resources\7.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\cherry_100x125.jpg" />
+    <None Include="Resources\cherry.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\diamond_100x125.jpg" />
+    <None Include="Resources\diamond.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\slotBack.jpg" />

@@ -11,46 +11,74 @@ namespace OneArmedBandit
 {
     public partial class Form1 : Form
     {
-        // random number generator
-
-        // int value for score initialized to 10
-
-
+        Random rnd = new Random();
+        int score = 10;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void spinButton_Click(object sender, EventArgs e) 
+        private void spinButton_Click(object sender, EventArgs e)
         {
-            // get random values for each reel (store each in separate int variable)
+            int 
+            int reelOne = rnd.Next(1, 4);
+            int reelTwo = rnd.Next(1, 4);
+            int reelThree = rnd.Next(1, 4);
+            score = score - 1;
+            scoreDisplay.Text = Convert.ToString(score);
 
+            if (score > 0)
+            {
+                switch (reelOne)
+                {
+                    case 1:
+                        reel1.Image = Properties.Resources._7_100x125;
+                        break;
+                    case 2:
+                        reel1.Image = Properties.Resources.cherry_100x125;
+                        break;
+                    case 3:
+                        reel1.Image = Properties.Resources.diamond_100x125;
+                        break;
+                }
+                switch (reelTwo)
+                {
+                    case 1:
+                        reel2.Image = Properties.Resources._7_100x125;
+                        break;
+                    case 2:
+                        reel2.Image = Properties.Resources.cherry_100x125;
+                        break;
+                    case 3:
+                        reel2.Image = Properties.Resources.diamond_100x125;
+                        break;
+                }
+                switch (reelThree)
+                {
+                    case 1:
+                        reel3.Image = Properties.Resources._7_100x125;
+                        break;
+                    case 2:
+                        reel3.Image = Properties.Resources.cherry_100x125;
+                        break;
+                    case 3:
+                        reel3.Image = Properties.Resources.diamond_100x125;
+                        break;
+                }
+            }
+            if (reel1.Image == Properties.Resources._7_100x125) && (reelOne == reelTwo == reelThree)
+            {
 
-            // check value of reel 1 with a switch statement and set appropriate image
+            }     
 
-
-            // check value of reel 2 with a switch statement and set appropriate image
-
-
-            // check value of reel 3 with a switch statement and set appropriate image
-
-
-            /// STOP HERE ----------------------------------------------------------
-            /// Test to make sure that your program will display random
-            /// images to each reel. Only continue on after you know this works
-            /// --------------------------------------------------------------------
-
-
-            // Use compound if statement to check if all reels are equal. 
-            // If yes show "winner" statement and add 3 to score.
-            // If no show "play again" statement and subtract 1 from score.         
-
-
-            // if score has reached 0 display "lose" message and set button enabled property to false
-
-
-            // display updated score
+            else if (score <= 0)
+            {
+                coinLabel.ForeColor = Color.Red;
+                scoreDisplay.ForeColor = Color.Red;
+                outputLabel.Text = "Not enough money!";
+            }
 
         }
     }
 }
+
